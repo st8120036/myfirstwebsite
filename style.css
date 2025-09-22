@@ -1,109 +1,128 @@
-/* --- Основні стилі --- */
+/* --- Основні стилі сторінки --- */
 body {
-  font-family: 'Arial', sans-serif;
-  background: #fefefe;
-  color: #333;
-  margin: 0;
+  font-family: 'Arial', sans-serif; /* Шрифт для всього тексту */
+  background: #f4f6f8;              /* Світлий фон сторінки */
+  color: #333;                       /* Колір основного тексту */
+  margin: 0;                          /* Прибираємо стандартні відступи */
   padding: 0;
-  line-height: 1.6;
+  line-height: 1.6;                  /* Висота рядка для зручного читання */
 }
 
 /* --- Хедер --- */
 header {
-  background: #007acc;       /* Синій фон */
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
+  background: #007acc;               /* Синій фон хедера */
+  color: #fff;                        /* Білий текст */
+  padding: 30px 20px;                 /* Відступи всередині хедера */
+  text-align: center;                 /* Центрування тексту */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Легка тінь для об'єму */
 }
 
+header h1 {
+  margin: 0;                          /* Прибираємо відступи заголовка */
+  font-size: 2rem;                     /* Розмір тексту заголовка */
+}
+
+/* --- Навігація в хедері --- */
 header nav ul {
-  list-style: none;
+  list-style: none;                    /* Прибираємо маркери списку */
+  display: flex;                       /* Горизонтальне розташування пунктів */
+  justify-content: center;             /* Центруємо меню */
+  gap: 25px;                           /* Відстань між пунктами */
+  margin-top: 10px;                    /* Відступ зверху для списку */
   padding: 0;
-  margin: 10px 0 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
 }
 
 header nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+  color: #fff;                         /* Колір посилань у меню */
+  text-decoration: none;               /* Прибираємо підкреслення */
+  font-weight: 600;                     /* Жирний шрифт */
+  transition: 0.3s;                    /* Плавний ефект при наведенні */
 }
 
 header nav a:hover {
-  text-decoration: underline;
+  text-decoration: underline;          /* Підкреслення при наведенні */
+  color: #ffeaa7;                      /* Колір при наведенні */
 }
 
 /* --- Основний контент --- */
 main {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 0 20px;
+  max-width: 900px;                     /* Обмежуємо ширину для кращої читабельності */
+  margin: 40px auto;                    /* Центруємо по горизонталі і додаємо верхній відступ */
+  padding: 0 20px;                      /* Відступи з боків */
 }
 
 section {
-  margin-bottom: 40px;
-  text-align: center;
+  margin-bottom: 50px;                  /* Відстань між секціями */
+  background: #fff;                     /* Білий фон секції */
+  padding: 25px 20px;                   /* Відступи всередині секції */
+  border-radius: 12px;                  /* Скруглення кутів */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Легка тінь для об'єму */
+  text-align: center;                   /* Центрування контенту всередині секції */
 }
 
 section h2 {
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  color: #007acc;
+  color: #007acc;                       /* Синій заголовок секції */
+  margin-bottom: 20px;                  /* Відступ знизу */
+  font-size: 1.8rem;                    /* Розмір заголовка */
 }
 
-/* --- Фото --- */
-img {
-  border-radius: 0;       /* Прямокутне фото */
-  width: 220px;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* --- Фото профілю --- */
+img.profile {
+  border-radius: 8px;                    /* Легке скруглення кутів для фото */
+  width: 220px;                          /* Ширина фото */
+  height: auto;                           /* Автоматична висота за пропорцією */
+  object-fit: cover;                      /* Заповнює рамку без спотворення */
+  display: block;                         /* Щоб margin працював */
+  margin: 0 auto 20px;                    /* Центруємо фото і додаємо відступ знизу */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Тінь для об'єму фото */
 }
 
-/* --- Текстові блоки --- */
-p, li {
-  font-size: 1rem;
-  color: #555;
+/* --- Списки робіт (практичні та лабораторні) --- */
+.cards {
+  list-style: none;                     /* Прибираємо маркери списку */
+  padding: 0;                            /* Відступи всередині списку */
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+.cards li {
+  background: #f7f9fc;                   /* Світлий фон картки */
+  padding: 15px 20px;                     /* Відступи всередині картки */
+  margin-bottom: 15px;                    /* Відстань між картками */
+  border-radius: 8px;                      /* Скруглення кутів */
+  text-align: left;                        /* Текст вирівнюємо зліва */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Легка тінь */
+  transition: 0.3s;                        /* Плавний ефект при наведенні */
 }
 
-li {
-  margin-bottom: 12px;
+.cards li:hover {
+  transform: translateY(-3px);             /* Злегка піднімаємо картку при наведенні */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Тінь стає глибшою */
 }
 
-/* --- Посилання --- */
-a {
-  color: #007acc;
-  text-decoration: none;
+.cards a {
+  color: #007acc;                          /* Колір посилань у картках */
+  font-weight: 600;                         /* Жирний шрифт */
+  text-decoration: none;                    /* Без підкреслення */
 }
 
-a:hover {
-  text-decoration: underline;
+.cards a:hover {
+  text-decoration: underline;               /* Підкреслення при наведенні */
 }
 
 /* --- Футер --- */
 footer {
-  background: #f2f2f2;
-  color: #555;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 0.9rem;
-  border-top: 1px solid #ddd;
+  background: #fff;                        /* Білий фон футера */
+  color: #555;                              /* Сірий текст */
+  text-align: center;                       /* Центруємо текст */
+  padding: 25px 20px;                       /* Відступи всередині футера */
+  border-top: 1px solid #ddd;               /* Легка верхня межа */
+  font-size: 0.95rem;                       /* Розмір тексту футера */
 }
 
 footer a {
-  color: #007acc;
-  text-decoration: none;
+  color: #007acc;                           /* Колір посилань у футері */
+  text-decoration: none;                    /* Без підкреслення */
 }
 
 footer a:hover {
-  text-decoration: underline;
+  text-decoration: underline;               /* Підкреслення при наведенні */
 }
