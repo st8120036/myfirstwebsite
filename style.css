@@ -68,7 +68,7 @@ section h2 {
 /* --- Фото профілю --- */
 img.profile {
   border-radius: 8px;
-  width: 73px;
+  width: 100px;
   height: auto;
   object-fit: cover;
   display: block;
