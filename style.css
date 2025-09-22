@@ -1,81 +1,120 @@
-/* Загальні стилі */
+/* ================== Загальні стилі ================== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f8f8f8;
-  color: #333;
+  background: #ffffff;
+  color: #111111;
   line-height: 1.6;
 }
 
-/* Шапка */
+/* ================== Шапка ================== */
 header {
-  background: #2c3e50;
+  background: #064635; /* темно-зелений */
   color: white;
-  padding: 20px 0;
+  padding: 30px 20px;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 header h1 {
   margin: 0;
+  font-size: 2em;
 }
 
-/* Навігація */
+/* ================== Навігація ================== */
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 10px 0 0 0;
+  margin: 15px 0 0 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 nav a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  padding: 5px 10px;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #a8d5ba; /* світліший зелений при hover */
+  border-bottom: 2px solid #a8d5ba;
 }
 
-/* Основна частина */
-main {
-  padding: 20px;
-}
-
+/* ================== Секції ================== */
 section {
-  background: white;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 5px;
+  background: #ffffff;
+  margin: 30px auto;
+  padding: 25px 20px;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-section h2 {
-  color: #2c3e50;
+/* Заголовки секцій */
+h2 {
+  color: #064635;
+  border-bottom: 2px solid #064635;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
 
-section img {
-  max-width: 150px;
-  border-radius: 50%;
+/* ================== Фото ================== */
+#about img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover; /* прямокутне фото */
   display: block;
-  margin-bottom: 10px;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Футер */
+/* ================== Списки робіт ================== */
+section ul li {
+  padding: 15px;
+  margin-bottom: 12px;
+  border-left: 5px solid #064635;
+  transition: background 0.3s;
+}
+
+section ul li:hover {
+  background: #f2f2f2;
+}
+
+/* ================== Футер ================== */
 footer {
-  background: #2c3e50;
+  background: #064635;
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 25px 20px;
+  margin-top: 40px;
 }
 
 footer a {
-  color: #1abc9c;
+  color: #a8d5ba;
   text-decoration: none;
+  margin: 0 5px;
 }
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* ================== Адаптивність ================== */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #about img {
+    width: 90%;
+    height: auto;
+  }
 }
