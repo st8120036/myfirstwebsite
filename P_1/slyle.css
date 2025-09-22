@@ -94,26 +94,26 @@ td {
 .month-table .gray { background:#e9ecef; text-align:center; }
 
 /* ensure legend boxes inherit colors used earlier */
-.box.yellow { background:#fff3cd }
-.box.green { background:#d4edda }
-.box.blue { background:#cce5ff }
+.box.yellow { background:#efdea4 }
+.box.green { background:#9ce7ae a }
+.box.blue { background:#88b8eb  }
 .box.gray { background:#e2e3e5 }
 
 /* Кольори предметів */
 .yellow {
-  background: #fff3cd; /* лекції */
+  background: #efdea4; /* лекції */
 }
 
 .green {
-  background: #d4edda; /* практики */
+  background: #9ce7ae ; /* практики */
 }
 
 .blue {
-  background: #cce5ff; /* лаби */
+  background: #88b8eb ; /* лаби */
 }
 
 .gray {
-  background: #e2e3e5; /* вихідні */
+  background: #707070 ; /* вихідні */
 }
 
 td.empty {
