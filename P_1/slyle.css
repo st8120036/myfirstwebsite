@@ -1,46 +1,45 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  margin: 0;
-  padding: 20px;
+  background: #f9f9fb;
+  color: #333;
+  margin: 20px;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  color: #2a4d69;
 }
 
-table.html {
+h2 {
+  margin-top: 40px;
+  color: #4b86b4;
+}
+
+table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #fff;
 }
 
-table.html th, 
-table.html td {
+th, td {
   border: 1px solid #ccc;
-  padding: 8px;
+  padding: 10px;
   text-align: center;
-  font-size: 14px;
+  vertical-align: top;
 }
 
-table.html th {
-  background: #4a90e2;
-  color: white;
+th {
+  background: #2a4d69;
+  color: #fff;
 }
 
-.time {
-  background: #eee;
-  font-weight: bold;
+tbody tr:nth-child(even) {
+  background: #f2f6fa;
 }
 
-.week {
-  background: #ddd;
-  font-weight: bold;
-  text-align: center;
-  font-size: 15px;
+tbody tr:hover {
+  background: #dbe9f4;
 }
-
-.lesson.yellow { background: #fff9db; }
-.lesson.green  { background: #e9fbe9; }
-.lesson.blue   { background: #e3f0ff; }
