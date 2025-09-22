@@ -1,44 +1,109 @@
-/* --- Основні стилі сторінки --- */
+/* --- Основні стилі --- */
 body {
-  font-family: Arial, sans-serif; /* Шрифт для всього тексту */
-  background: #f8f9fa;            /* Світлий фон */
-  margin: 20px;                   /* Відступи навколо сторінки */
-  color: #222;                     /* Колір тексту */
+  font-family: 'Arial', sans-serif;
+  background: #fefefe;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
-h1, h2 {
-  text-align: center;             /* Заголовки по центру */
-  margin-bottom: 20px;            /* Відступи знизу */
+/* --- Хедер --- */
+header {
+  background: #007acc;       /* Синій фон */
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
 }
 
-p {
-  margin-bottom: 10px;            /* Відступ між абзацами */
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* --- Основний контент --- */
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+section {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #007acc;
+}
+
+/* --- Фото --- */
+img {
+  border-radius: 0;       /* Прямокутне фото */
+  width: 220px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- Текстові блоки --- */
+p, li {
+  font-size: 1rem;
+  color: #555;
 }
 
 ul {
-  list-style-type: none;          /* Прибираємо стандартні маркери */
+  list-style: none;
   padding: 0;
 }
 
 li {
-  margin-bottom: 12px;            /* Відступ між пунктами списку */
+  margin-bottom: 12px;
 }
 
+/* --- Посилання --- */
 a {
-  color: #007acc;                 /* Колір посилань */
-  text-decoration: none;          /* Прибираємо підкреслення */
+  color: #007acc;
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;     /* Підкреслення при наведенні */
+  text-decoration: underline;
 }
 
-/* --- Прямокутна фотографія --- */
-img {
-  border-radius: 0;      /* Робимо фото прямокутним */
-  width: 200px;          /* Ширина фото */
-  height: auto;          /* Висота за пропорцією */
-  object-fit: cover;     /* Заповнення блоку без спотворення */
-  display: block;        /* Щоб margin працював */
-  margin: 0 auto 10px;   /* Центруємо фото і додаємо відступ знизу */
+/* --- Футер --- */
+footer {
+  background: #f2f2f2;
+  color: #555;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+}
+
+footer a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
