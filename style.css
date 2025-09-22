@@ -1,6 +1,6 @@
 /* --- Основні стилі сторінки --- */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background: #f4f6f8;
   color: #333;
   margin: 0;
@@ -10,7 +10,7 @@ body {
 
 /* --- Хедер --- */
 header {
-  background: #007acc;
+  background: #073415;
   color: #fff;
   padding: 30px 20px;
   text-align: center;
@@ -60,7 +60,7 @@ section {
 }
 
 section h2 {
-  color: #007acc;
+  color: #073415;
   margin-bottom: 20px;
   font-size: 1.8rem;
 }
@@ -94,7 +94,7 @@ img.profile {
 }
 
 .cards a {
-  color: #007acc;
+  color: #073415;
   font-weight: 600;
   text-decoration: none;
 }
@@ -114,7 +114,7 @@ footer {
 }
 
 footer a {
-  color: #007acc;
+  color: #073415;
   text-decoration: none;
 }
 
