@@ -1,45 +1,121 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f9f9fb;
-  color: #333;
+  background: #f8f9fa;
   margin: 20px;
+  color: #222;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 30px;
-  color: #2a4d69;
-}
-
-h2 {
-  margin-top: 40px;
-  color: #4b86b4;
+  margin-bottom: 20px;
 }
 
 table {
-  width: 100%;
   border-collapse: collapse;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  background: #fff;
+  width: 100%;
+  table-layout: fixed;
 }
 
 th, td {
   border: 1px solid #ccc;
-  padding: 10px;
   text-align: center;
-  vertical-align: top;
+  padding: 8px;
+  font-size: 14px;
+  word-wrap: break-word;
 }
 
 th {
-  background: #2a4d69;
+  background: #007acc;
+  color: white;
+}
+
+td {
+  height: 80px;
+  vertical-align: top;
+}
+
+/* Timetable-specific */
+.timetable th {
+  background: #2b9fb3;
   color: #fff;
+  padding: 10px 6px;
 }
 
-tbody tr:nth-child(even) {
-  background: #f2f6fa;
+.timetable .time {
+  width: 120px;
+  font-weight: bold;
 }
 
-tbody tr:hover {
-  background: #dbe9f4;
+.lesson {
+  padding: 6px;
+  text-align: left;
+  border-left: 6px solid rgba(0,0,0,0.06);
+}
+
+.lesson strong { display:block; font-size:15px; margin-bottom:4px; }
+.lesson .type { font-style: italic; color: #555; }
+.lesson small { color:#444; }
+
+.legend {
+  margin-top: 18px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+.legend .items { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+.legend .item { display:flex; align-items:center; gap:8px; color:#333; }
+.legend .box { width:18px; height:14px; display:inline-block; border-radius:3px; border:1px solid rgba(0,0,0,0.06); }
+.legend .box.yellow { background:#fff3cd }
+.legend .box.green { background:#d4edda }
+.legend .box.blue { background:#cce5ff }
+.legend .box.gray { background:#e2e3e5 }
+.legend .note { margin-top:8px; color:#666; font-size:13px; }
+
+/* Responsive: stack days on narrow screens */
+@media (max-width:700px) {
+  .timetable, .timetable thead, .timetable tbody, .timetable th, .timetable td, .timetable tr { display:block; }
+  .timetable thead { display:none; }
+  .timetable tr { margin-bottom:12px; }
+  .timetable td.time { background:#eef6f8; }
+}
+
+/* Month table styles */
+.month-table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  margin-bottom: 12px;
+}
+.month-table th, .month-table td { border:1px solid #d0d7da; padding:8px; vertical-align:top; }
+.month-table th { background:#1f7f8a; color:white; }
+.month-table .day { font-weight:700; width:160px; }
+.month-table .empty { background:#fafafa; }
+.month-table .gray { background:#e9ecef; text-align:center; }
+
+/* ensure legend boxes inherit colors used earlier */
+.box.yellow { background:#fff3cd }
+.box.green { background:#d4edda }
+.box.blue { background:#cce5ff }
+.box.gray { background:#e2e3e5 }
+
+/* Кольори предметів */
+.yellow {
+  background: #fff3cd; /* лекції */
+}
+
+.green {
+  background: #d4edda; /* практики */
+}
+
+.blue {
+  background: #cce5ff; /* лаби */
+}
+
+.gray {
+  background: #e2e3e5; /* вихідні */
+}
+
+td.empty {
+  background: #f9f9f9;
 }
