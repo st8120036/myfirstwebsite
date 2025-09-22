@@ -10,7 +10,7 @@ body {
 
 /* --- Хедер --- */
 header {
-  background: #007acc;               /* Синій фон хедера */
+  background: #174d2d;               /* Зелений фон хедера */
   color: #fff;                        /* Білий текст */
   padding: 30px 20px;                 /* Відступи всередині хедера */
   text-align: center;                 /* Центрування тексту */
@@ -61,7 +61,7 @@ section {
 }
 
 section h2 {
-  color: #007acc;                       /* Синій заголовок секції */
+  color: #174d2d;                       /* Зелений заголовок секції */
   margin-bottom: 20px;                  /* Відступ знизу */
   font-size: 1.8rem;                    /* Розмір заголовка */
 }
@@ -69,7 +69,7 @@ section h2 {
 /* --- Фото профілю --- */
 img.profile {
   border-radius: 8px;                    /* Легке скруглення кутів для фото */
-  width: 220px;                          /* Ширина фото */
+  width: 70px;                          /* Ширина фото */
   height: auto;                           /* Автоматична висота за пропорцією */
   object-fit: cover;                      /* Заповнює рамку без спотворення */
   display: block;                         /* Щоб margin працював */
