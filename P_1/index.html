@@ -2,142 +2,113 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Розклад занять — тиждень</title>
-  <!-- local stylesheet for this folder (filename intentionally matches file in P_1) -->
-  <link rel="stylesheet" href="slyle.css">
+  <title>Розклад занять</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Розклад на тиждень</h1>
-  <h2>Розклад на вересень 2025 (тижні)</h2>
+  <h1>Розклад занять (29.09 – 02.11.2025)</h1>
 
-  <!-- Month view: columns = тижні (01.09, 08.09, 15.09, 22.09, 29.09) -->
-  <table class="month-table">
-    <thead>
-      <tr>
-        <th>День / Пара</th>
-        <th>01.09.2025</th>
-        <th>08.09.2025</th>
-        <th>15.09.2025</th>
-        <th>22.09.2025</th>
-        <th>29.09.2025</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Monday -->
-      <tr>
-        <td class="day">Пн — 2 пара<br>09:45–11:20</td>
-        <td class="lesson blue">ШІ-2017 [Лк]<br>Кисіль Т.М.<br>ауд. Дистанц.</td>
-        <td class="lesson blue">ПРО-2017 [Лк]<br>Торошанко Я.І.</td>
-        <td class="lesson yellow">ШП-2017 [Лк]<br>Кисіль Т.М.</td>
-        <td class="lesson yellow">ЗВВ-2017 [Лк]<br>Федоренко О.С.</td>
-        <td class="lesson blue">ШІ-2017 [Лк]<br>Кисіль Т.М.</td>
-      </tr>
+  <div class="schedule">
+    <!-- Заголовки -->
+    <div class="header">Час</div>
+    <div class="header">29.09.2025</div>
+    <div class="header">06.10.2025</div>
+    <div class="header">13.10.2025</div>
+    <div class="header">20.10.2025</div>
+    <div class="header">27.10.2025</div>
+    <div class="header">03.11.2025</div>
 
-      <tr>
-        <td class="day">Пн — 3 пара<br>11:45–13:20</td>
-        <td class="lesson yellow">ХТ-15 [Лк]<br>Шикула О.М.<br>Дистанц.</td>
-        <td class="empty"></td>
-        <td class="lesson green">ПРО-2017 [Пз]<br>Торошанко Я.І.<br>Дистанц.</td>
-        <td class="lesson yellow">ХТ-15 [Лк]<br>Шикула О.М.</td>
-        <td class="lesson yellow">ХТ-15 [Лк]<br>Шикула О.М.</td>
-      </tr>
+    <!-- 1 пара -->
+    <div class="time">1 пара<br>08:00–09:35</div>
+    <div class="empty"></div><div class="empty"></div><div class="empty"></div><div class="empty"></div><div class="empty"></div><div class="empty"></div>
 
-      <tr>
-        <td class="day">Пн — 4 пара<br>13:30–15:05</td>
-        <td class="empty"></td>
-        <td class="lesson green">WEB тех-2016 [Пз]<br>Дзяба В.В.</td>
-        <td class="empty"></td>
-        <td class="lesson green">ДТМІ-2018 [Пз]<br>Асєєва Л.А.</td>
-        <td class="empty"></td>
-      </tr>
+    <!-- 2 пара -->
+    <div class="time">2 пара<br>09:45–11:20</div>
+    <div class="empty"></div>
+    <div class="lesson yellow">ЗВВБ-2017[Лк]<br>Дистанц.<br>Федоренко О.С.</div>
+    <div class="lesson yellow">ШІ-2017[Лк]<br>Дистанц.<br>Кисіль Т.М.</div>
+    <div class="lesson yellow">ЗВВБ-2017[Лк]<br>Дистанц.<br>Федоренко О.С.</div>
+    <div class="lesson yellow">ШІ-2017[Лк]<br>Дистанц.<br>Кисіль Т.М.</div>
+    <div class="empty"></div>
 
-      <tr>
-        <td class="day">Пн — 5 пара<br>15:15–16:50</td>
-        <td class="lesson green">ПРО-2017 [Пз]<br>Торошанко Я.І.</td>
-        <td class="empty"></td>
-        <td class="lesson blue">МЗШІ-2020 [Пз]<br>Зеногенродський О.С.</td>
-        <td class="empty"></td>
-        <td class="lesson green">ПРО-2017 [Пз]<br>Торошанко Я.І.</td>
-      </tr>
+    <!-- 3 пара -->
+    <div class="time">3 пара<br>11:45–13:20</div>
+    <div class="empty"></div>
+    <div class="lesson yellow">ПРО-2017[Лк]<br>Дистанц.<br>Торощанко Л.І.</div>
+    <div class="lesson green">ХТ-15[Лб]<br>Дистанц.<br>Шкура О.М.</div>
+    <div class="lesson yellow">ПРО-2017[Лк]<br>Дистанц.<br>Торощанко Л.І.</div>
+    <div class="lesson green">ХТ-15[Лб]<br>Дистанц.<br>Шкура О.М.</div>
+    <div class="empty"></div>
 
-      <!-- Tuesday (showing first pair times) -->
-      <tr>
-        <td class="day">Вт — 1 пара<br>08:00–09:35</td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-      </tr>
+    <!-- 4 пара -->
+    <div class="time">4 пара<br>13:30–15:05</div>
+    <div class="empty"></div>
+    <div class="lesson yellow">WEB тех-2016[Лб]<br>Дистанц.<br>Дзябо В.В.</div>
+    <div class="lesson yellow">АТМІ-2018[Лб]<br>Дистанц.<br>Асеєва Л.А.</div>
+    <div class="lesson yellow">WEB тех-2016[Лб]<br>Дистанц.<br>Дзябо В.В.</div>
+    <div class="lesson yellow">АТМІ-2018[Лб]<br>Дистанц.<br>Асеєва Л.А.</div>
+    <div class="empty"></div>
 
-      <!-- Wednesday -->
-      <tr>
-        <td class="day">Ср — 3 пара<br>11:45–13:20</td>
-        <td class="lesson green">ПРО-2017 [Пз]<br>Торошанко Я.І.</td>
-        <td class="lesson blue">ПРО-2017 [Лк]<br>Торошанко Я.І.</td>
-        <td class="lesson green">ПРО-2017 [Пз]<br>Торошанко Я.І.</td>
-        <td class="lesson green">ПРО-2017 [Пз]<br>Торошанко Я.І.</td>
-        <td class="empty"></td>
-      </tr>
+    <!-- 5 пара -->
+    <div class="time">5 пара<br>15:25–16:50</div>
+    <div class="empty"></div>
+    <div class="lesson blue">МЗШ-2020[Лб]<br>Дистанц.<br>Зеленгородський О.С.</div>
+    <div class="empty"></div>
+    <div class="lesson blue">МЗШ-2020[Лб]<br>Дистанц.<br>Зеленгородський О.С.</div>
+    <div class="empty"></div>
+    <div class="empty"></div>
 
-      <tr>
-        <td class="day">Ср — 4 пара<br>13:30–15:05</td>
-        <td class="lesson blue">WEB тех-2016 [Пз]<br>Дзяба В.В.</td>
-        <td class="empty"></td>
-        <td class="lesson blue">WEB тех-2016 [Пз]<br>Дзяба В.В.</td>
-        <td class="lesson blue">WEB тех-2016 [Пз]<br>Дзяба В.В.</td>
-        <td class="empty"></td>
-      </tr>
+    <!-- Вівторок -->
+    <div class="time">Вівторок</div>
+    <div class="empty"></div><div class="empty"></div><div class="empty"></div><div class="empty"></div><div class="empty"></div><div class="empty"></div>
 
-      <!-- Thursday -->
-      <tr>
-        <td class="day">Чт — 2 пара<br>09:45–11:20</td>
-        <td class="empty"></td>
-        <td class="lesson yellow">ХТ-15 [Лк]<br>Шикула О.М.</td>
-        <td class="empty"></td>
-        <td class="lesson yellow">ХТ-15 [Лк]<br>Шикула О.М.</td>
-        <td class="empty"></td>
-      </tr>
+    <!-- Середа -->
+    <div class="time">3 пара<br>11:45–13:20</div>
+    <div class="lesson green">ПРО-2017[Пз]<br>Дистанц.<br>Торощанко Л.І.</div>
+    <div class="lesson green">ПРО-2017[Пз]<br>Дистанц.<br>Торощанко Л.І.</div>
+    <div class="lesson green">ПРО-2017[Пз]<br>Дистанц.<br>Торощанко Л.І.</div>
+    <div class="lesson green">ПРО-2017[Пз]<br>Дистанц.<br>Торощанко Л.І.</div>
+    <div class="lesson green">ПРО-2017[Пз]<br>Дистанц.<br>Торощанко Л.І.</div>
+    <div class="lesson green">ПРО-2017[Пз]<br>Дистанц.<br>Торощанко Л.І.</div>
 
-      <!-- Friday -->
-      <tr>
-        <td class="day">Пт — 3 пара<br>11:45–13:20</td>
-        <td class="empty"></td>
-        <td class="lesson yellow">ШП-2017 [Лк]<br>Кисіль Т.М.</td>
-        <td class="empty"></td>
-        <td class="lesson green">МЗШІ-2020 [Пз]<br>Зеногенродський О.С.</td>
-        <td class="empty"></td>
-      </tr>
+    <div class="time">4 пара<br>13:30–15:05</div>
+    <div class="lesson blue">АТМІ-2018[Пз]<br>Дистанц.<br>Асеєва Л.А.</div>
+    <div class="lesson blue">АТМІ-2018[Пз]<br>Дистанц.<br>Асеєва Л.А.</div>
+    <div class="lesson blue">АТМІ-2018[Пз]<br>Дистанц.<br>Асеєва Л.А.</div>
+    <div class="lesson blue">АТМІ-2018[Пз]<br>Дистанц.<br>Асеєва Л.А.</div>
+    <div class="lesson blue">АТМІ-2018[Пз]<br>Дистанц.<br>Асеєва Л.А.</div>
+    <div class="lesson blue">АТМІ-2018[Пз]<br>Дистанц.<br>Асеєва Л.А.</div>
 
-      <!-- Saturday / Sunday: вихідні or sparse classes -->
-      <tr>
-        <td class="day">Сб — 1 пара<br>08:00–09:35</td>
-        <td class="gray">Вихідний</td>
-        <td class="gray">Вихідний</td>
-        <td class="gray">Вихідний</td>
-        <td class="gray">Вихідний</td>
-        <td class="gray">Вихідний</td>
-      </tr>
-      <tr>
-        <td class="day">Нд — 1 пара<br>08:00–09:35</td>
-        <td class="gray">Вихідний</td>
-        <td class="gray">Вихідний</td>
-        <td class="gray">Вихідний</td>
-        <td class="gray">Вихідний</td>
-        <td class="gray">Вихідний</td>
-      </tr>
-    </tbody>
-  </table>
+    <!-- Четвер -->
+    <div class="time">2 пара<br>09:45–11:20</div>
+    <div class="lesson blue">МЗШ-2020[Лб]<br>Дистанц.<br>Зеленгородський О.С.</div>
+    <div class="lesson blue">МЗШ-2020[Лб]<br>Дистанц.<br>Зеленгородський О.С.</div>
+    <div class="lesson blue">МЗШ-2020[Лб]<br>Дистанц.<br>Зеленгородський О.С.</div>
+    <div class="lesson blue">МЗШ-2020[Лб]<br>Дистанц.<br>Зеленгородський О.С.</div>
+    <div class="lesson blue">МЗШ-2020[Лб]<br>Дистанц.<br>Зеленгородський О.С.</div>
+    <div class="lesson blue">МЗШ-2020[Лб]<br>Дистанц.<br>Зеленгородський О.С.</div>
 
-  <div class="legend">
-    <h3>Пояснення</h3>
-    <div class="items">
-      <div class="item"><span class="box yellow"></span> Лекція</div>
-      <div class="item"><span class="box green"></span> Практика / ПЗ</div>
-      <div class="item"><span class="box blue"></span> Лабораторна</div>
-      <div class="item"><span class="box gray"></span> Вихідний</div>
-    </div>
-    <p class="note">Цей місячний розклад заповнено на вересень 2025 згідно із прикріпленим зображенням. Щоб змінити пару — відредагуйте відповідну клітинку таблиці.</p>
+    <!-- 3 пара -->
+    <div class="time">3 пара<br>11:45–13:20</div>
+    <div class="lesson yellow">WEB тех-2016[Пз]<br>Дистанц.<br>Дзябо В.В.</div>
+    <div class="lesson yellow">WEB тех-2016[Пз]<br>Дистанц.<br>Дзябо В.В.</div>
+    <div class="lesson yellow">WEB тех-2016[Пз]<br>Дистанц.<br>Дзябо В.В.</div>
+    <div class="lesson yellow">WEB тех-2016[Пз]<br>Дистанц.<br>Дзябо В.В.</div>
+    <div class="lesson yellow">WEB тех-2016[Пз]<br>Дистанц.<br>Дзябо В.В.</div>
+    <div class="lesson yellow">WEB тех-2016[Пз]<br>Дистанц.<br>Дзябо В.В.</div>
+
+    <!-- 4 пара -->
+    <div class="time">4 пара<br>13:30–15:05</div>
+    <div class="lesson green">ХТ-15[Пз]<br>Дистанц.<br>Шкура О.М.</div>
+    <div class="lesson green">ХТ-15[Пз]<br>Дистанц.<br>Шкура О.М.</div>
+    <div class="lesson green">ХТ-15[Пз]<br>Дистанц.<br>Шкура О.М.</div>
+    <div class="lesson green">ХТ-15[Пз]<br>Дистанц.<br>Шкура О.М.</div>
+    <div class="lesson green">ХТ-15[Пз]<br>Дистанц.<br>Шкура О.М.</div>
+    <div class="lesson green">ХТ-15[Пз]<br>Дистанц.<br>Шкура О.М.</div>
   </div>
 </body>
 </html>
+    <!-- Футер -->
+    <footer>
+        <p>Контакт: Болкун Денис, Номер телефону: +380968315575 </p>
+    </footer>
