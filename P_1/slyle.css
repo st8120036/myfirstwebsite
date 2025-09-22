@@ -10,24 +10,23 @@ h1 {
   margin-bottom: 20px;
 }
 
-.schedule {
-  display: grid;
-  grid-template-columns: 120px repeat(6, 1fr);
-  border: 2px solid #ccc;
+table.html {
+  width: 100%;
+  border-collapse: collapse;
   background: white;
 }
 
-.schedule div {
-  border: 1px solid #ddd;
+table.html th, 
+table.html td {
+  border: 1px solid #ccc;
   padding: 8px;
   text-align: center;
   font-size: 14px;
 }
 
-.header {
+table.html th {
   background: #4a90e2;
   color: white;
-  font-weight: bold;
 }
 
 .time {
@@ -35,12 +34,13 @@ h1 {
   font-weight: bold;
 }
 
-.lesson {
-  font-weight: 500;
-  line-height: 1.4;
+.week {
+  background: #ddd;
+  font-weight: bold;
+  text-align: center;
+  font-size: 15px;
 }
 
 .lesson.yellow { background: #fff9db; }
 .lesson.green  { background: #e9fbe9; }
 .lesson.blue   { background: #e3f0ff; }
-.empty         { background: #f9f9f9; }
