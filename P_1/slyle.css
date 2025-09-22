@@ -66,10 +66,10 @@ td {
 .legend .items { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
 .legend .item { display:flex; align-items:center; gap:8px; color:#333; }
 .legend .box { width:18px; height:14px; display:inline-block; border-radius:3px; border:1px solid rgba(0,0,0,0.06); }
-.legend .box.yellow { background:#fff3cd }
-.legend .box.green { background:#d4edda }
-.legend .box.blue { background:#cce5ff }
-.legend .box.gray { background:#e2e3e5 }
+.legend .box.yellow { background:#efdea4 }
+.legend .box.green { background:#9ce7ae }
+.legend .box.blue { background:#88b8eb }
+.legend .box.gray { background:#707070 }
 .legend .note { margin-top:8px; color:#666; font-size:13px; }
 
 /* Responsive: stack days on narrow screens */
