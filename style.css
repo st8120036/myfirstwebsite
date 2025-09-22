@@ -68,12 +68,11 @@ section h2 {
 /* --- Фото профілю --- */
 img.profile {
   border-radius: 8px;
-  /* робимо приблизно в 3 рази менше: якщо початково 220px, то ~73px */
   width: 73px;
   height: auto;
   object-fit: cover;
   display: block;
-  margin: 0 auto 20px;
+  margin: 0 auto 10px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
