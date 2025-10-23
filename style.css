@@ -1,4 +1,3 @@
-/* ---- Загальні стилі та кольори ---- */
 
 :root {
   /* Використані кольори з зображення */
@@ -9,8 +8,8 @@
   --color-text: #111111;
   
   /* Шрифти */
-  --font-sans: 'Arial', sans-serif; /* Arial або схожий шрифт без засічок */
-  --font-serif: 'Georgia', serif; /* Для більш "презентабельного" тексту */
+  --font-sans: 'Georgia', sans-serif; 
+  --font-serif: 'Georgia', serif; 
 }
 
 /* Скидання базових стилів */
@@ -146,8 +145,6 @@ a {
   height: 400px; /* Приблизно співвідношення 4:5 */
   object-fit: cover;
   display: block;
-  /* Ефект "обрізання" фото, як на дизайні */
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
 }
 
 .profile-info {
@@ -218,36 +215,12 @@ a {
   position: relative;
   overflow: hidden;
 }
-
-/* Псевдоелемент для скошеної частини */
-.work-block-1::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 150px;
-  height: 100%;
-  background-color: var(--color-background);
-  /* Нахил елемента */
-  transform: skewX(-15deg); 
-  transform-origin: top right;
-  z-index: 0;
-}
-
-.work-block-1 > * {
-  position: relative; /* Щоб контент був поверх псевдоелемента */
-  z-index: 1;
-}
-
 /* Блок Лабораторної роботи (Темно-зелений фон) */
 .work-block-2 {
   grid-column: 2 / 4; /* Займає 2 і 3 колонки */
   grid-row: 4 / 5;
   background-color: var(--color-dark-green);
   color: var(--color-white);
-  /* Ефект відступу від краю, як на дизайні */
-  margin-top: -100px;
-  position: relative; /* Потрібно для позиціонування над фоном */
 }
 
 .work-block-2 .work-button {
