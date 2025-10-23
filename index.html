@@ -7,55 +7,67 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Заголовок сторінки -->
-  <header>
-    <h1>Вітаю це сайт Болкуна Дениса</h1>
-    <!-- Меню навігації -->
-    <nav>
-      <ul>
-        <li><a href="#">Головна</a></li>
-        <li><a href="#about">Про мене</a></li>
-        <li><a href="#labs">Лабораторні заняття</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
+<div class="site-wrapper">
 
-    <!-- Секція "Про мене" -->
-    <section id="about">
-      <h2>Про мене</h2>
-  <img class="profile" src="photo_of_denis.jpg" alt="Болкун Денис">
-      <p><strong>Ім'я:</strong> Болкун Денис</p>
-      <p><strong>Email:</strong> st8120036@stud.duikt.edu.ua</p>
-<p>Я студент групи КІД-42, який вивчає структуру будування сайту </p>
-    </section>
+    <div class="header-corner">Болкун Денис</div>
 
-    <!-- Секція "Лабораторні роботи" -->
-    <section id="labs">
-      <h2>Лабораторні роботи</h2>
-      <ul>
-        <li>
-        <strong>Лабораторна робота №1:</strong> <a href="P_1/index.html">Розклад завдань</a>
-          <p>Опис: Практична робота з розкладом занять.</p>
-        </li>
-        <li>
-        <strong>Лабораторна робота №2:</strong> <a href="P_2/lab2.html">Основи css</a>
-          <p>Опис: Лабораторна робота в якій ми навчимося візуально міняти стилі на нашому сайті.</p>
-        </li>
-      </ul>
-    </section>
+    <div class="content-container">
 
-  </main>
+      <nav class="side-nav">
+        <a href="#about" class="side-link">Про мене</a>
+        <a href="#practice" class="side-link">Практичні роботи</a>
+        <a href="#labs" class="side-link">Лабораторні заняття</a>
+      </nav>
 
-  <!-- Футер -->
-  <footer>
-    <p>Контакт: bolkunchik04@gmail.com</p>
-    <p>Соцмережі: 
-      <a href="https://github.com/st8120036" target="_blank">GitHub</a> | 
+      <main class="main-content-grid">
+
+        <nav class="top-nav">
+          <a href="#">Головна</a>
+          <a href="#about">Про мене</a>
+          <a href="#practice">Практичні роботи</a>
+          <a href="#labs">Практичні заняття</a>
+        </nav>
+
+        <section id="about" class="section-about">
+          <div class="profile-photo-container">
+            <img class="profile-photo" src="photo_of_denis.jpg" alt="Болкун Денис">
+          </div>
+          <div class="profile-info">
+            <h2>Болкун Денис</h2>
+            <p class="status">студент групи КІД-42, який вивчає структуру будування сайту</p>
+            <p class="email-text">Email: st8120036@stud.duikt.edu.ua</p>
+          </div>
+        </section>
+
+        <section id="practice" class="section-work work-block-1">
+          <div class="work-text">
+            <h3>Практична робота №1</h3>
+            <p>Практична робота з розкладом занять</p>
+          </div>
+          <a href="P_1/index.html" class="work-button">Розклад завдань</a>
+        </section>
+
+        <section id="labs" class="section-work work-block-2">
+          <div class="work-text">
+            <h3>Лабораторна 2</h3>
+            <p>Виконати список задач не редагуючи вихідний html файл.</p>
+          </div>
+          <a href="P_2/lab2.html" class="work-button">Робота з css</a>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-left">bolkunchik04@gmail.com</div>
+    <div class="footer-center">2022–2026. Університет ДУІКТ</div>
+    <div class="footer-right">
+      <span>Соцмережі:</span>
+      <a href="https://github.com/st8120036" target="_blank">GitHub</a> |
       <a href="https://t.me/lov69wav" target="_blank">Telegram</a>
-    </p>
-    <p>2022–2026. Університет ДУІКТ</p>
+    </div>
   </footer>
 
 </body>
