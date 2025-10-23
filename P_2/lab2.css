@@ -69,6 +69,7 @@ input[type="text"]:not(:disabled) {
 /* 13.*/
 p:first-child {
     font-size: 24px;
+    }
 /* 14.*/
 .special + li {
     text-decoration: line-through;
