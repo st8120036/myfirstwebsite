@@ -1,87 +1,177 @@
+/* =========================================
+   ТВОЇ ЗАВДАННЯ (СЕЛЕКТОРИ 1-16)
+   ========================================= */
 
-/* 1.*/
+/* 1. */
 li:first-child {
     font-weight: bold;
 }
 
-/* 2.*/
+/* 2. */
 a:last-child {
     color: red;
 }
 
-/* 3.*/
+/* 3. */
 input:disabled {
     background-color: lightgray;
 }
 
-/* 4.*/
+/* 4. */
 div > p {
     font-weight: 600; 
 }
 
-/* 5.*/
+/* 5. */
 [href^="https"] {
     color: green;
 }
 
-/* 6.*/
+/* 6. */
 input[type="text"] {
     border: 1px solid blue;
 }
 
-/* 7.*/
+/* 7. */
 li:first-child,
 li:last-child {
     font-size: 24px;
 }
 
-/* 8.*/
+/* 8. */
 div p {
     font-size: 16px;
 }
 
-/* 9.*/
+/* 9. */
 input:checked {
     background-color: lightblue;
     outline: 2px solid lightblue;
 }
 
-
-/* 10.*/
+/* 10. */
 li > a {
     text-decoration: underline;
 }
-/* 11.*/
+
+/* 11. */
 li:nth-child(even) {
     font-weight: bold;
 }
-/* Парні елементи отримують жирний шрифт.
-   Завдання 1 і 11 конфліктують, але :nth-child(even) має вищий пріоритет ніж :first-child.
-   Для першого елемента: :first-child (непарний) залишається жирним від завдання 1.
-   Другий елемент: :nth-child(even) робить його жирним.
-   Третій елемент: :nth-child(odd) не змінюється, але :last-child від завдання 7 робить його 24px.*/
 
-/* 12.*/
+/* 12. */
 input[type="text"]:not(:disabled) {
     background-color: gray;
 }
 
-/* 13.*/
+/* 13. */
 p:first-child {
     font-size: 24px;
-    }
-/* 14.*/
+}
+
+/* 14. */
 .special + li {
     text-decoration: line-through;
 }
 
-/* 15.*/
+/* 15. */
 p::first-letter {
     font-size: 36px;
 }
 
-/* 16.*/
+/* 16. */
 a::after {
     content: " ↗";
     font-size: 0.8em; 
+}
+
+/* =========================================
+   ДОДАТКОВІ СТИЛІ (СТРУКТУРА ТА ФОРМА)
+   ========================================= */
+
+/* Загальні налаштування сторінки, щоб не виглядало "сирим" */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Центрування контенту */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Навігація */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* --- Стилі для твоєї нової ФОРМИ --- */
+
+form {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+}
+
+/* Робимо лейбли блочними, щоб текст був над полем */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Стилізуємо всі поля вводу (включаючи password, email, date, які ти додав) */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;             /* Розтягуємо на всю ширину */
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;  /* Щоб padding не ламав ширину */
+    border: 1px solid #ccc;  /* Базова рамка (твоя синя рамка для text залишиться завдяки пункту 6) */
+    border-radius: 4px;
+}
+
+/* Кнопка відправки */
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+    font-size: 14px;
 }
