@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     
-    /* Фото автомата на весь екран */
+    /* Фото автомата */
     background-image: url('arcade_cabinet.png'); 
     background-size: cover;
     background-position: center;
@@ -18,15 +18,18 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-/* --- 2. Екран битви (Арена всередині автомата) --- */
+/* --- 2. Екран битви --- */
 .battle-scene {
     position: relative;
-    /* Розміри підібрані під пропорції екрана */
-    width: 806px;
-    height: 490px;
+    width: 760px;
+    height: 430px;
    
+    border-radius: 10px;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.7);
+    overflow: hidden;
 }
-/* --- 3. Ефекти (Атмосфера) --- */
+
+/* --- 3. Ефекти --- */
 .weather-effect {
     position: absolute;
     top: 0;
@@ -66,9 +69,10 @@ body {
     animation: shadow-scale 3s ease-in-out infinite;
 }
 
-/* Гравець (Weezing) */
+/* Гравець (Weezing) - ЛІВИЙ НИЖНІЙ */
 .player {
-    bottom: 40px; /* Трішки підняв вище */
+    /* Підняв вище (Y) */
+    bottom: 80px; 
     left: -200px;
     transform: scale(2.8);
     animation: 
@@ -76,9 +80,10 @@ body {
         float-player 3s ease-in-out infinite 1.5s;
 }
 
-/* Супротивник (Gyarados) */
+/* Супротивник (Gyarados) - ПРАВИЙ ВЕРХНІЙ */
 .opponent {
-    top: 60px; /* Трішки опустив нижче */
+    /* Опустив нижче (Y) */
+    top: 100px; 
     right: -200px;
     transform: scale(1.6);
     animation: 
@@ -87,7 +92,6 @@ body {
 }
 
 /* --- 5. UI (HP бари) --- */
-/* Тут змінив координати, щоб посунути їх ближче до центру */
 .ui-layer {
     position: absolute;
     width: 100%;
@@ -107,15 +111,15 @@ body {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
-/* Зміщення HP барів ближче до центру */
+/* Зсув HP ще ближче до центру */
 .opponent-hp { 
-    top: 40px;   /* Було 25px */
-    left: 50px;  /* Було 25px */
+    top: 60px;    /* Зсув по Y вниз */
+    left: 90px;   /* Зсув по X вправо */
 }
 
 .player-hp { 
-    bottom: 90px; /* Було 60px, підняв вище, щоб не перекривати Weezing'а */
-    right: 50px;  /* Було 25px */
+    bottom: 130px; /* Зсув по Y вгору */
+    right: 90px;   /* Зсув по X вліво */
 }
 
 .hp-bar {
@@ -137,8 +141,8 @@ body {
 
 @keyframes enter-player {
     0% { left: -200px; opacity: 0; }
-    /* ТУТ ЗМІНА: 140px замість 60px (ближче до центру) */
-    100% { left: 140px; opacity: 1; } 
+    /* ТУТ ГОЛОВНА ЗМІНА ПО X: 220px (було 140px) */
+    100% { left: 220px; opacity: 1; } 
 }
 
 @keyframes float-player {
@@ -148,8 +152,8 @@ body {
 
 @keyframes enter-opponent {
     0% { right: -200px; opacity: 0; }
-    /* ТУТ ЗМІНА: 140px замість 60px (ближче до центру) */
-    100% { right: 140px; opacity: 1; }
+    /* ТУТ ГОЛОВНА ЗМІНА ПО X: 220px (було 140px) */
+    100% { right: 220px; opacity: 1; }
 }
 
 @keyframes float-opponent {
