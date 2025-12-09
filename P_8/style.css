@@ -1,14 +1,17 @@
 /* --- ПІДКЛЮЧЕННЯ ШРИФТІВ --- */
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap');
 
-/* --- ОСНОВНІ НАЛАШТУВАННЯ --- */
+/* --- БАЗОВІ НАЛАШТУВАННЯ --- */
+* {
+    box-sizing: border-box; /* Важливо: щоб padding не ламав сітку */
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Heebo', sans-serif;
     color: #21243D;
     background-color: #FFFFFF;
-    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -16,38 +19,37 @@ body {
 .site-wrapper {
     max-width: 1152px;
     margin: 0 auto;
-    padding: 20px;
-    /* Використовуємо Grid або Flex, щоб ім'я (лого) було зверху */
-    position: relative;
+    padding: 0 20px; /* Відступи по боках для всього контенту */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* --- ЛОГО / ІМ'Я (Header Corner) --- */
+/* --- ЛОГО / ІМ'Я --- */
 .header-corner {
     font-weight: 700;
-    font-size: 24px; /* Трохи більший шрифт для імені */
+    font-size: 24px;
     color: #21243D;
-    margin-bottom: 10px;
-    /* На десктопі можна спробувати позиціонувати його зліва від меню */
+    padding-top: 20px;
 }
 
 /* --- КОНТЕЙНЕРИ --- */
 .content-container {
     width: 100%;
-}
-
-.main-content-grid {
-    width: 100%;
+    flex: 1; /* Притискає футер до низу, якщо мало контенту */
 }
 
 /* --- НАВІГАЦІЯ --- */
-/* Приховуємо бокову навігацію, щоб відповідати макету Portfolio UI */
 .side-nav {
-    display: none;
+    display: none; /* Приховуємо бокову навігацію, як у макеті */
 }
 
 .top-nav {
-    text-align: right; /* Меню праворуч */
-    padding: 10px 0 50px 0;
+    display: flex;
+    justify-content: flex-end; /* Меню праворуч */
+    align-items: center;
+    padding: 20px 0 50px 0;
+    flex-wrap: wrap; /* Дозволяє перенесення, якщо екран малий */
 }
 
 .top-nav a {
@@ -63,26 +65,26 @@ body {
     color: #FF6464;
 }
 
-/* --- СЕКЦІЯ "ПРО МЕНЕ" (HERO) --- */
+/* --- СЕКЦІЯ "ПРО МЕНЕ" --- */
 .section-about {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 0 100px 0;
-    /* Важливий момент: у HTML фото йде першим. 
-       Щоб воно було справа, а текст зліва - використовуємо row-reverse */
+    padding: 50px 0 80px 0;
+    /* На десктопі: текст зліва, фото справа */
     flex-direction: row-reverse; 
+    gap: 40px;
 }
 
 .profile-info {
-    max-width: 55%; /* Текстова частина займає близько половини */
+    flex: 1;
     text-align: left;
 }
 
 .profile-info h2 {
     font-weight: 700;
     font-size: 44px;
-    line-height: 60px;
+    line-height: 1.2;
     margin-bottom: 20px;
     margin-top: 0;
     color: #21243D;
@@ -91,7 +93,6 @@ body {
 .status {
     font-size: 16px;
     line-height: 24px;
-    font-weight: 400;
     margin-bottom: 20px;
 }
 
@@ -102,36 +103,33 @@ body {
     display: block;
 }
 
-/* Контейнер для фото */
+/* Фотографія */
 .profile-photo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-shrink: 0; /* Щоб фото не стискалося */
 }
 
-/* Сама фотографія */
 .profile-photo {
     width: 243px;
     height: 243px;
     border-radius: 50%;
     object-fit: cover;
-    /* Тінь зміщена ліворуч-вниз (згідно макету) */
     box-shadow: -10px 10px 0 #EDF7FA; 
 }
 
-/* --- СЕКЦІЇ РОБІТ (FEATURED WORKS) --- */
+/* --- СЕКЦІЇ РОБІТ --- */
 .section-work {
     background: #FFFFFF;
     margin-bottom: 30px;
-    padding: 20px 0;
-    border-bottom: 1px solid #E0E0E0; /* Тонка лінія розділення */
-    display: flex; /* Робимо флекс, щоб кнопка могла бути збоку або знизу */
+    padding: 25px 0;
+    border-bottom: 1px solid #E0E0E0;
+    display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center; /* Центруємо кнопку по вертикалі відносно тексту */
+    gap: 20px;
 }
 
 .work-text {
-    max-width: 70%;
+    flex: 1; /* Текст займає весь вільний простір */
 }
 
 .section-work h3 {
@@ -145,36 +143,38 @@ body {
 .section-work p {
     font-size: 16px;
     color: #21243D;
+    margin: 0;
 }
 
-/* Кнопка переходу */
+/* Кнопка */
 .work-button {
-    display: inline-block;
-    background: #FF6464; /* Червоний з макету */
+    background: #FF6464;
     color: #FFFFFF;
     text-decoration: none;
-    padding: 8px 20px;
-    border-radius: 18px; /* Закруглена кнопка */
+    padding: 10px 25px;
+    border-radius: 20px;
     font-weight: 500;
     font-size: 16px;
     transition: background 0.3s, transform 0.2s;
     white-space: nowrap;
-    margin-top: 10px; /* Відступ, якщо перенесеться */
+    text-align: center;
 }
 
 .work-button:hover {
     background: #e04848;
+    transform: translateY(-2px);
 }
 
 /* --- ФУТЕР --- */
 .main-footer {
     text-align: center;
-    padding: 50px 20px;
-    background-color: #EDF7FA; /* Світлий фон футера */
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    padding: 40px 20px;
+    background-color: #EDF7FA;
+    margin-top: auto; /* Притискає футер вниз */
+}
+
+.footer-right {
+    margin-top: 10px;
 }
 
 .footer-right a {
@@ -182,6 +182,11 @@ body {
     text-decoration: none;
     font-weight: 500;
     margin: 0 5px;
+    transition: 0.3s;
+}
+
+.footer-right a:hover {
+    color: #FF6464;
 }
 
 /* =========================================
@@ -190,67 +195,73 @@ body {
 
 @media (max-width: 768px) {
     
-    /* 1. Header та Навігація */
+    /* 1. Навігація */
     .header-corner {
-        text-align: center; /* Центруємо ім'я */
-        display: block;
-        margin-bottom: 15px;
+        text-align: center; /* Ім'я по центру */
+        margin-bottom: 10px;
     }
 
     .top-nav {
-        text-align: center; /* Центруємо посилання */
-        padding-top: 0;
+        justify-content: center; /* Центруємо меню */
+        flex-direction: column;  /* Посилання стовпчиком для зручності */
+        gap: 15px;
+        padding-bottom: 30px;
     }
 
     .top-nav a {
-        display: inline-block;
-        margin: 0 10px; /* Менші відступи між посиланнями */
+        margin-left: 0; /* Прибираємо відступ зліва */
         font-size: 18px;
+        padding: 5px 0; /* Збільшуємо зону кліку */
     }
 
     /* 2. Секція "Про мене" */
     .section-about {
-        flex-direction: column; /* Вертикальне розташування */
-        text-align: center;     /* Центрування тексту */
-        padding: 30px 0;
+        flex-direction: column; /* Фото зверху, текст знизу */
+        text-align: center;
+        padding: 30px 0 50px 0;
+        gap: 25px;
     }
 
     .profile-info {
         max-width: 100%;
-        margin-top: 30px; /* Відступ тексту від фото */
     }
 
     .profile-info h2 {
-        font-size: 32px; /* Менший шрифт заголовка */
-        line-height: 40px;
+        font-size: 32px;
         margin-bottom: 15px;
     }
 
     /* Фото на мобільному */
     .profile-photo {
-        width: 170px;
-        height: 170px;
-        box-shadow: -5px 10px 0 #EDF7FA; /* Менша тінь */
+        width: 180px;
+        height: 180px;
+        box-shadow: -5px 10px 0 #EDF7FA;
     }
 
     /* 3. Секції робіт */
     .section-work {
-        flex-direction: column; /* Текст зверху, кнопка знизу */
-        align-items: flex-start;
+        flex-direction: column; /* Стовпчик */
+        align-items: flex-start; /* Вирівнювання по лівому краю */
+        text-align: left;
+        gap: 15px;
     }
 
     .work-text {
-        max-width: 100%;
-        margin-bottom: 15px;
+        width: 100%;
     }
 
     .section-work h3 {
         font-size: 24px;
+        margin-bottom: 10px;
     }
 
     .work-button {
-        width: 100%; /* Кнопка на всю ширину на мобільному (опціонально) */
-        text-align: center;
-        box-sizing: border-box;
+        width: 100%; /* Кнопка на всю ширину екрану для зручності пальцем */
+        padding: 12px 0;
+    }
+    
+    /* 4. Футер */
+    .main-footer {
+        padding: 30px 15px;
     }
 }
