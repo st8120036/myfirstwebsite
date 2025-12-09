@@ -3,19 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторна робота №6 - Анімація Machamp</title>
+    <title>Pokémon Battle - Full Screen Arcade</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="game-container">
-        <div class="scrolling-background"></div>
+    <div class="battle-scene">
         
-        <div class="character">
-            <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/machamp.gif" alt="Machamp">
+        <div class="weather-effect"></div>
+
+        <div class="ui-layer">
+            <div class="hp-box opponent-hp">
+                <span class="name">Gyarados (Shiny)</span>
+                <div class="hp-bar"><div class="fill" style="width: 80%;"></div></div>
+            </div>
+            
+            <div class="hp-box player-hp">
+                <span class="name">Weezing</span>
+                <div class="hp-bar"><div class="fill" style="width: 65%;"></div></div>
+            </div>
         </div>
 
-        <div class="ground"></div>
+        <div class="pokemon opponent">
+            <img src="https://img.pokemondb.net/sprites/black-white/anim/shiny/gyarados.gif" alt="Gyarados">
+            <div class="shadow"></div>
+        </div>
+
+        <div class="pokemon player">
+            <img src="https://img.pokemondb.net/sprites/black-white/anim/back-normal/weezing.gif" alt="Weezing">
+            <div class="shadow"></div>
+        </div>
     </div>
 
 </body>

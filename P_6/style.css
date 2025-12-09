@@ -1,88 +1,167 @@
-/* 1. Скидаємо відступи */
-* {
+/* --- Основні налаштування сторінки --- */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* 2. Центруємо гру на екрані */
-body {
+    /* Центрування контенту (сцени битви) */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #333;
-    font-family: sans-serif;
+    /* Мінімальна висота на весь екран */
+    min-height: 100vh;
+    
+    /* --- ФОН НА ВЕСЬ САЙТ --- */
+    background-image: url('arcade_cabinet.png');
+    background-size: cover;   /* Розтягнути, щоб покрити весь екран */
+    background-position: center; /* Центрувати зображення */
+    background-repeat: no-repeat; /* Не повторювати */
+    background-attachment: fixed; /* Фіксувати фон при прокрутці (опціонально) */
+    
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Приховати скролбар, якщо щось вилазить */
 }
 
-/* 3. Рамка гри */
-.game-container {
+/* --- Контейнер сцени битви --- */
+/* Це вікно, де відбуваються дії. Воно має бути поверх екрану автомата */
+.battle-scene {
     position: relative;
+    /* Розміри цього блоку мають приблизно відповідати розміру екрану на твоїй картинці автомата.
+       Можливо, доведеться трохи підкоригувати width/height, якщо екран не 800x450. */
     width: 800px;
     height: 450px;
+    /* Обрізаємо все, що виходить за межі "екрану" */
     overflow: hidden;
-    border: 4px solid white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    background-color: #87CEEB; /* Резервний колір */
+    /* Для відладки, щоб бачити межі контейнера, розкоментуй: */
+    /* border: 2px solid red; */
 }
 
-[cite_start]/* 4. Рухомий фон [cite: 14, 15] */
-.scrolling-background {
+/* --- Анімація атмосфери всередині екрану --- */
+.weather-effect {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    
-    /* === ГОЛОВНЕ: Шлях до картинки === */
-    background-image: url('bg.jpg'); 
-    
-    background-size: cover;
-    background-position: left bottom;
-    
-    /* Анімація руху фону */
-    animation: moveBg 20s linear infinite; 
-    z-index: 1;
+    background: radial-gradient(circle, rgba(255,255,255,0) 20%, rgba(0,0,0,0.3) 100%);
+    z-index: 2;
+    animation: battle-atmosphere 8s infinite alternate;
+    pointer-events: none;
 }
 
-[cite_start]/* 5. Персонаж [cite: 12] */
-.character {
+@keyframes battle-atmosphere {
+    0% { background-color: rgba(255, 0, 0, 0.05); }
+    50% { background-color: rgba(0, 0, 255, 0.05); }
+    100% { background-color: rgba(255, 0, 0, 0.05); }
+}
+
+/* --- Покемони та їх анімація --- */
+.pokemon {
     position: absolute;
-    bottom: 30px;
-    left: -150px;
     z-index: 10;
-    
-    /* Рух покемона */
-    animation: walkAcross 10s linear infinite;
 }
 
-.character img {
-    height: 150px;
-    animation: bounce 0.5s infinite alternate;
+.pokemon img {
+    display: block;
+    image-rendering: pixelated;
 }
 
-/* 6. Земля */
-.ground {
+.shadow {
+    width: 80%;
+    height: 10px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    margin: -10px auto 0;
+    filter: blur(4px);
+    animation: shadow-scale 3s ease-in-out infinite;
+}
+
+/* -- Гравець (Weezing) зліва знизу -- */
+.player {
+    bottom: 40px;
+    left: -200px;
+    transform: scale(2.5);
+    animation: 
+        enter-player 1.5s ease-out forwards,
+        float-player 3s ease-in-out infinite 1.5s;
+}
+
+/* -- Супротивник (Gyarados) справа зверху -- */
+.opponent {
+    top: 60px;
+    right: -200px;
+    transform: scale(1.5);
+    animation: 
+        enter-opponent 1.5s ease-out forwards,
+        float-opponent 4s ease-in-out infinite 1.5s;
+}
+
+/* --- Keyframes (Ключові кадри) --- */
+@keyframes enter-player {
+    0% { left: -200px; opacity: 0; }
+    100% { left: 80px; opacity: 1; }
+}
+
+@keyframes float-player {
+    0%, 100% { transform: scale(2.5) translateY(0); }
+    50% { transform: scale(2.5) translateY(-10px); }
+}
+
+@keyframes enter-opponent {
+    0% { right: -200px; opacity: 0; }
+    100% { right: 80px; opacity: 1; }
+}
+
+@keyframes float-opponent {
+    0%, 100% { transform: scale(1.5) translateY(0) rotate(0deg); }
+    50% { transform: scale(1.55) translateY(-5px) rotate(2deg); }
+}
+
+@keyframes shadow-scale {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(0.8); opacity: 0.3; }
+}
+
+/* --- Інтерфейс (UI) --- */
+.ui-layer {
     position: absolute;
-    bottom: 0;
     width: 100%;
-    height: 40px;
-    background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
-    z-index: 5;
+    height: 100%;
+    z-index: 20;
+    pointer-events: none;
 }
 
-/* === Ключові кадри === */
-@keyframes moveBg {
-    from { background-position: 0 bottom; }
-    to { background-position: -800px bottom; }
+.hp-box {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #444;
+    font-size: 14px;
+    font-weight: bold;
+    width: 200px;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
 }
 
-@keyframes walkAcross {
-    0% { transform: translateX(0); left: -150px; }
-    100% { transform: translateX(1200px); left: -150px; }
+.opponent-hp {
+    top: 30px;
+    left: 30px;
 }
 
-@keyframes bounce {
-    from { transform: translateY(0); }
-    to { transform: translateY(-5px); }
+.player-hp {
+    bottom: 80px;
+    right: 30px;
+}
+
+.hp-bar {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+    border: 1px solid #999;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4caf50, #81c784);
 }
