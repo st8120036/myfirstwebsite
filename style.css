@@ -260,5 +260,7 @@ a {
   }
   .side-link { writing-mode: horizontal-tb; transform: none; margin: 0 15px; }
   
-  .main-content-grid { grid-template-columns: 1fr; } /* Одна */
+  .main-content-grid { grid-template-columns: 1fr; } /* Одна колонка */
+  .section-about { flex-direction: column; padding: 30px; }
+  .main-footer { margin-left: 0; flex-direction: column; gap: 20px; }
 }
