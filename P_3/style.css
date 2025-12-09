@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+    background-color: #0f0f0f; /* Темна тема YouTube */
+    color: white;
+    overflow-x: hidden;
+}
+
+/* --- HEADER --- */
+.header {
+    display: flex; /* Flexbox для вирівнювання: ліво, центр, право */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 56px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #0f0f0f;
+    z-index: 100;
+}
+
+.header-left, .header-center, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-left .logo {
+    height: 20px;
+    margin-left: 16px;
+    cursor: pointer;
+}
+.header-left .country-code {
+    font-size: 10px;
+    color: #aaa;
+    margin-top: -10px;
+    margin-left: 2px;
+}
+.menu-icon {
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* Пошук */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #121212;
+    border: 1px solid #303030;
+    border-radius: 40px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.search-box input {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 400px;
+    outline: none;
+    font-size: 16px;
+}
+.search-box button {
+    background: #222;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-left: 1px solid #303030;
+}
+.search-box button:hover {
+    background-color: #303030;
+}
+
+.mic-btn, .header-right i {
+    background: #181818;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 24px;
+}
+.mic-btn:hover, .header-right i:hover {
+    background-color: #303030;
+}
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- MAIN CONTAINER --- */
+.container {
+    display: flex; /* Головний Flex-контейнер: Sidebar зліва, Content справа */
+    margin-top: 56px;
+    height: calc(100vh - 56px);
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: 240px;
+    background-color: #0f0f0f;
+    overflow-y: auto;
+    padding-top: 10px;
+    flex-shrink: 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 24px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0 12px;
+}
+.nav-item:hover {
+    background-color: #272727;
+}
+.nav-item.active {
+    background-color: #272727;
+    font-weight: bold;
+}
+.nav-item i {
+    margin-right: 20px;
+    font-size: 24px;
+}
+.sidebar hr {
+    border: 0;
+    border-top: 1px solid #3f3f3f;
+    margin: 12px 0;
+}
+
+/* --- CONTENT AREA --- */
+.content {
+    flex-grow: 1;
+    background-color: #0f0f0f;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+/* --- FILTERS (CHIPS) --- */
+.filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+/* Приховуємо скролбар для краси */
+.filters::-webkit-scrollbar {
+    height: 0px;
+}
+
+.chip {
+    background-color: #272727;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.2s;
+    font-weight: 500;
+}
+.chip.active {
+    background-color: white;
+    color: black;
+}
+.chip:hover:not(.active) {
+    background-color: #3f3f3f;
+}
+
+/* --- VIDEO GRID --- */
+.video-grid {
+    display: flex;
+    flex-wrap: wrap; /* Перенос на новий рядок */
+    gap: 20px;
+    row-gap: 40px;
+}
+
+.video-card {
+    flex: 1 1 300px; /* Адаптивна ширина карток */
+    max-width: 380px;
+    cursor: pointer;
+}
+
+.thumbnail {
+    position: relative;
+    width: 100%;
+}
+.thumbnail img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    aspect-ratio: 16/9; /* Зберігаємо пропорції відео */
+    transition: 0.2s;
+}
+.video-card:hover .thumbnail img {
+    border-radius: 0; /* Ефект при наведенні як на YouTube */
+}
+
+.duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 3px 4px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.video-info {
+    display: flex;
+    margin-top: 12px;
+}
+.channel-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.details h3 {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 6px;
+    color: #f1f1f1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Обрізаємо заголовок після 2 рядків */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.details .channel-name, .details .stats {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 20px;
+}
+.details .channel-name:hover {
+    color: white;
+}

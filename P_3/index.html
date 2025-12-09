@@ -1,11 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>YouTube UA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    
+
+    <header class="header">
+        <div class="header-left">
+            <i class="material-icons menu-icon">menu</i>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo" class="logo">
+            <span class="country-code">UA</span>
+        </div>
+        
+        <div class="header-center">
+            <div class="search-box">
+                <input type="text" placeholder="Пошук">
+                <button><i class="material-icons">search</i></button>
+            </div>
+            <button class="mic-btn"><i class="material-icons">mic</i></button>
+        </div>
+
+        <div class="header-right">
+            <i class="material-icons">video_call</i>
+            <i class="material-icons">notifications</i>
+            <div class="user-avatar">В</div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <div class="nav-item active"><i class="material-icons">home</i> <span>Головна</span></div>
+            <div class="nav-item"><i class="material-icons">explore</i> <span>Shorts</span></div>
+            <div class="nav-item"><i class="material-icons">subscriptions</i> <span>Підписки</span></div>
+            <hr>
+            <div class="nav-item"><i class="material-icons">history</i> <span>Історія</span></div>
+            <div class="nav-item"><i class="material-icons">video_library</i> <span>Ваші відео</span></div>
+            <div class="nav-item"><i class="material-icons">watch_later</i> <span>Переглянути пізніше</span></div>
+        </aside>
+
+        <main class="content">
+            
+            <div class="filters">
+                <button class="chip active">Усі</button>
+                <button class="chip">Ігри</button>
+                <button class="chip">Музика</button>
+                <button class="chip">Наживо</button>
+                <button class="chip">Гумор</button>
+                <button class="chip">Останні завантаження</button>
+            </div>
+
+            <div class="video-grid">
+                
+                <div class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/320x180/000000/FFFFFF?text=Економічна+Правда" alt="Preview">
+                        <span class="duration">12:30</span>
+                    </div>
+                    <div class="video-info">
+                        <div class="channel-avatar" style="background-color: #0057b7;"></div>
+                        <div class="details">
+                            <h3>Як збільшився борг України за час великої війни?</h3>
+                            <p class="channel-name">Економічна правда</p>
+                            <p class="stats">78 тис. переглядів • 1 місяць тому</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/320x180/333333/FFFFFF?text=LUKI" alt="Preview">
+                        <span class="duration">32:08</span>
+                    </div>
+                    <div class="video-info">
+                        <div class="channel-avatar" style="background-color: #ffcc00;"></div>
+                        <div class="details">
+                            <h3>ЩО БІСИТЬ ЖУРНАЛІСТКУ | Марія Малевська</h3>
+                            <p class="channel-name">LUKI</p>
+                            <p class="stats">70 тис. переглядів • 4 місяці тому</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/320x180/990000/FFFFFF?text=ДЗК" alt="Preview">
+                        <span class="duration">1:06:07</span>
+                    </div>
+                    <div class="video-info">
+                        <div class="channel-avatar" style="background-color: #e62117;"></div>
+                        <div class="details">
+                            <h3>ВЛАД КУРАН ТА ОЛЕГ СВИЩ В ДЗК НА ВИЖИВАННЯ</h3>
+                            <p class="channel-name">ЛЕВИ НА ДЖИПІ</p>
+                            <p class="stats">578 тис. переглядів • 11 днів тому</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/320x180/111111/FFFFFF?text=Янович" alt="Preview">
+                        <span class="duration">1:01:52</span>
+                    </div>
+                    <div class="video-info">
+                        <div class="channel-avatar" style="background-color: #555;"></div>
+                        <div class="details">
+                            <h3>РОМАН ЩЕРБАН В ПРОТАГОНІСТАХ: ІВАН МАЗЕПА</h3>
+                            <p class="channel-name">Женя Янович</p>
+                            <p class="stats">114 тис. переглядів • 11 днів тому</p>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://via.placeholder.com/320x180/222222/FFFFFF?text=Geek+Journal" alt="Preview">
+                        <span class="duration">24:15</span>
+                    </div>
+                    <div class="video-info">
+                        <div class="channel-avatar" style="background-color: #ff4500;"></div>
+                        <div class="details">
+                            <h3>ЧОМУ ВСІ ФАНАТІЮТЬ ВІД ДЮНИ? Огляд фільму</h3>
+                            <p class="channel-name">Geek Journal</p>
+                            <p class="stats">340 тис. переглядів • 2 дні тому</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
 </body>
 </html>

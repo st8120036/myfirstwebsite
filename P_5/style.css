@@ -1,0 +1,155 @@
+/* Підключення шрифту, який був у дизайні */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap');
+
+/* Основні налаштування сторінки */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Heebo', sans-serif; /* Шрифт з макету */
+    color: #21243D; /* Темний колір тексту з макету */
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+/* Обгортка сайту */
+.site-wrapper {
+    max-width: 1152px; /* Ширина з макету */
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+}
+
+/* Навігація */
+.top-nav {
+    text-align: right;
+    padding: 27px 0;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    font-size: 20px;
+    margin-left: 30px;
+    transition: color 0.3s;
+}
+
+.top-nav a:hover {
+    color: #FF6464;
+}
+
+.side-nav {
+    display: none; /* Приховуємо бокову навігацію для десктопу, як у макеті */
+}
+
+/* Секція "Про мене" */
+.section-about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0; /* Відступи, щоб центрувати як у дизайні */
+    flex-direction: row-reverse; /* Фото справа, текст зліва */
+}
+
+.profile-info {
+    max-width: 500px;
+}
+
+.profile-info h2 {
+    font-weight: 700;
+    font-size: 44px; /* Розмір заголовка з макету */
+    line-height: 60px;
+    margin-bottom: 20px;
+    color: #21243D;
+}
+
+.status {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.email-text {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Кнопки та посилання (стиль Rectangle 10) */
+.work-button {
+    display: inline-block;
+    background: #FF6464; /* Червоний з макету */
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: 20px;
+    transition: background 0.3s;
+}
+
+.work-button:hover {
+    background: #e04848;
+}
+
+/* Фото профілю (Ellipse 1) */
+.profile-photo {
+    width: 243px;
+    height: 243px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: -10px 10px 0 #EDF7FA; /* Ефект тіні колом з макету */
+}
+
+/* Секції робіт (Cards style) */
+.section-work {
+    background: #FFFFFF;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-bottom: 1px solid #E0E0E0; /* Vector лінія з макету */
+}
+
+.section-work h3 {
+    font-weight: 700;
+    font-size: 26px; /* Розмір заголовка роботи */
+    margin-bottom: 15px;
+}
+
+.section-work p {
+    font-size: 16px;
+    color: #21243D;
+}
+
+/* Футер */
+.main-footer {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #EDF7FA; /* Світло-блакитний фон з макету */
+    margin-top: 50px;
+}
+
+.footer-center {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.footer-right a {
+    color: #21243D;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Адаптивність (бонус, щоб не ламалося на телефоні) */
+@media (max-width: 768px) {
+    .section-about {
+        flex-direction: column;
+        text-align: center;
+    }
+    .top-nav {
+        text-align: center;
+    }
+    .profile-photo {
+        margin-bottom: 30px;
+    }
+}

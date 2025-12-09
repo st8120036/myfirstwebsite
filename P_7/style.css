@@ -1,0 +1,126 @@
+/* * 3. ВИКОРИСТАННЯ ЗМІННИХ
+ * Основні кольори для швидкої зміни теми
+ */
+:root {
+    /* Кольори фону сторінки */
+    --bg-color-main: #b71c1c;       /* Темно-червоний */
+    --bg-pattern-dot: #d32f2f;      /* Трохи світліший для візерунка */
+    
+    /* Кольори картки */
+    --card-bg: #ffffff;
+    --text-heading: #1a1a1a;
+    --text-body: #555555;
+    
+    /* Акцентні кольори */
+    --accent-gold: #c5a059;
+    --button-text: #ffffff;
+
+    /* Розміри */
+    --spacing-std: 20px;
+    --radius-std: 8px;              /* Класичне невелике заокруглення */
+    --shadow-static: 0 10px 25px rgba(0, 0, 0, 0.2); /* Тінь є, але вона не рухається */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* * Створення візерунка на фоні (горошок/сніг) без картинки */
+    background-color: var(--bg-color-main);
+    background-image: radial-gradient(var(--bg-pattern-dot) 15%, transparent 16%),
+                      radial-gradient(var(--bg-pattern-dot) 15%, transparent 16%);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* * 1. МЕТОДОЛОГІЯ BEM
+ * Block: .postcard
+ */
+.postcard {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 400px;
+    border-radius: var(--radius-std);
+    box-shadow: var(--shadow-static);
+    overflow: hidden; /* Щоб картинка не вилазила за межі */
+    border: 10px solid var(--card-bg); /* Створює ефект білої рамки навколо фото */
+}
+
+/* Element: .postcard__header */
+.postcard__header {
+    width: 100%;
+    height: 250px;
+    background-color: #eee;
+}
+
+/* Element: .postcard__image */
+.postcard__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Element: .postcard__body */
+.postcard__body {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: var(--card-bg);
+}
+
+/* Element: .postcard__title */
+.postcard__title {
+    font-family: 'Playfair Display', serif; /* Святковий шрифт */
+    color: var(--text-heading);
+    font-size: 28px;
+    margin-bottom: 15px;
+    /* Додаємо золоту лінію під заголовком */
+    border-bottom: 2px solid var(--accent-gold);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Element: .postcard__text */
+.postcard__text {
+    color: var(--text-body);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Element: .postcard__button */
+.postcard__button {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: var(--button-text);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 4px; /* Легке заокруглення */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    
+    /* Відсутність transition та hover-ефектів руху, як просили */
+}
+
+/* Адаптивність */
+@media (max-width: 450px) {
+    .postcard__header {
+        height: 200px;
+    }
+    
+    .postcard__title {
+        font-size: 24px;
+    }
+}
