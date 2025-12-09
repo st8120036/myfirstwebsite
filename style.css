@@ -1,258 +1,226 @@
-
-:root {
-  /* Використані кольори з зображення */
-  --color-dark-green: #1a423b; 
-  --color-light-green: #c4d7d1;
-  --color-white: #ffffff;
-  --color-background: #f1f1f1; /* Дуже світлий сірий/майже білий фон */
-  --color-text: #111111;
-  
-  /* Шрифти */
-  --font-sans: 'Georgia', sans-serif; 
-  --font-serif: 'Georgia', serif; 
-}
-
-/* Скидання базових стилів */
+/* --- Загальні стилі --- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
- font-family: var(--font-sans);
- color: var(--color-text);
- background-color: var(--color-background);
- min-height: 100vh;
- display: flex;
- flex-direction: column; /* Для прилипання футера до низу */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
 }
 
-/* ---- Макет сторінки (site-wrapper та grid) ---- */
-
+/* --- Основна обгортка (Layout) --- */
 .site-wrapper {
-  flex-grow: 1; /* Дозволяє контенту зайняти весь доступний простір */
-  display: grid;
-  /* Макет: 2 колонки - фіксована для кута/назви, решта для контенту */
-  grid-template-columns: 200px 1fr; 
-  grid-template-rows: auto 1fr;
-  max-width: 1400px; /* Обмеження ширини для великих екранів */
-  margin: 0 auto;
-  padding: 0; /* Прибираємо внутрішні відступи */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-/* Верхній лівий кут з ім'ям */
 .header-corner {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  background-color: var(--color-dark-green);
-  color: var(--color-white);
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
-/* Контейнер для бічної навігації та основного контенту */
+/* Контейнер для бокового меню та основного контенту */
 .content-container {
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  display: grid;
-  /* Макет: 2 колонки - бічна нав. та основний контент */
-  grid-template-columns: 200px 1fr;
-  height: 100%;
+    display: flex;
+    flex: 1;
 }
 
-/* ---- Бічна навігація (Ліва сторона) ---- */
-
+/* --- Бокове меню --- */
 .side-nav {
-  grid-column: 1 / 2;
-  background-color: var(--color-white);
-  border-right: 1px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
+    width: 250px;
+    background-color: #34495e;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; /* Щоб меню не стискалося */
 }
 
 .side-link {
-  color: var(--color-dark-green);
-  font-size: 1.1rem;
-  font-weight: 500;
-  padding: 100px 0 100px 20px; /* Велика вертикальна заливка для візуального поділу */
-  /* Поворот тексту, як на зображенні */
-  writing-mode: vertical-rl; 
-  transform: rotate(180deg);
-  letter-spacing: 2px;
-  transition: background-color 0.2s;
+    color: #ecf0f1;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: block;
 }
 
 .side-link:hover {
-  background-color: #eee;
+    background-color: #2c3e50;
+    color: #3498db;
 }
 
-/* ---- Основний контент (Grid для секцій) ---- */
-
+/* --- Основна сітка контенту --- */
 .main-content-grid {
- grid-column: 2 / 3;
-  display: grid;
-  /* Налаштування сітки для фото, заголовка та блоків робіт */
-  /* 3 колонки: 1. Фото, 2. Інфо, 3. Пуста */
-  grid-template-columns: 320px 1fr 150px; 
-  /* 4 ряди: 1. Верхнє меню, 2. Про мене, 3. Практична, 4. Лабораторна */
-  grid-template-rows: auto 420px 300px 1fr; 
+    flex: 1;
+    padding: 20px;
+    display: grid;
+    /* Адаптивна сітка: колонки по мін. 300px */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px;
+    align-content: start; /* Щоб елементи не розтягувались на всю висоту, якщо їх мало */
 }
 
-/* ---- Верхнє горизонтальне меню ---- */
-
+/* --- Верхня навігація (всередині Main) --- */
 .top-nav {
-  grid-column: 2 / 4; /* Займає 2 і 3 колонки */
-  grid-row: 1 / 2;
-  padding: 20px 0;
-  display: flex;
-   justify-content: flex-end;
-  gap: 20px;
-  font-size: 0.95rem;
-  font-weight: 500;
+    grid-column: 1 / -1; /* Розтягуємо на всю ширину сітки */
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.top-nav a {
+    color: #2c3e50;
+    font-weight: 500;
 }
 
 .top-nav a:hover {
- text-decoration: underline;
+    color: #3498db;
 }
 
-/* ---- Секція "Про мене" ---- */
-
+/* --- Секція "Про мене" --- */
 .section-about {
-  grid-column: 1 / 4; /* Займає всі 3 колонки для розміщення елементів */
-  grid-row: 2 / 3;
-  display: contents; /* Дозволяє дочірнім елементам розміщуватися в сітці батька */
-}
-
-.profile-photo-container {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  align-self: start;
-  margin-top: 20px;
+    grid-column: 1 / -1; /* Розтягуємо на всю ширину */
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
 }
 
 .profile-photo {
-  width: 320px;
-  height: 400px; /* Приблизно співвідношення 4:5 */
-  object-fit: cover;
-  display: block;
-}
-
-.profile-info {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  padding-left: 40px;
- padding-top: 80px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #3498db;
 }
 
 .profile-info h2 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  line-height: 1.1;
-  font-family: var(--font-serif);
+    margin-bottom: 10px;
+    color: #2c3e50;
 }
 
 .profile-info .status {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
+    font-style: italic;
+    color: #7f8c8d;
+    margin-bottom: 10px;
 }
 
-.profile-info .email-text {
-  font-size: 0.9rem;
-  color: #555;
+.email-text {
+    font-weight: bold;
+    color: #3498db;
 }
 
-/* ---- Секції Роботи (Практичні та Лабораторні) ---- */
-
+/* --- Картки робіт (Practice Works) --- */
 .section-work {
-  padding: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s;
+}
+
+.section-work:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 .work-text h3 {
-  font-size: 1.8rem;
-  margin-bottom: 5px;
-  font-family: var(--font-serif);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #2c3e50;
 }
 
 .work-text p {
-  font-size: 1rem;
-  color: #333;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
 }
 
 .work-button {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: var(--color-white);
-  color: var(--color-text);
-  border: 1px solid #ccc;
-  transition: background-color 0.2s, transform 0.2s;
-  font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: auto; /* Притискає кнопку до низу картки */
 }
 
 .work-button:hover {
-  background-color: #eee;
-  transform: translateY(-2px);
+    background-color: #2980b9;
 }
 
-/* Блок Практичної роботи (Світло-зелений фон) */
-.work-block-1 {
-  grid-column: 1 / 3; /* Займає 1 і 2 колонки */
-  grid-row: 3 / 4;
-  background-color: var(--color-light-green);
-  /* Ефект скосу, як на дизайні, за допомогою псевдоелемента */
-  position: relative;
-  overflow: hidden;
-}
-/* Блок Лабораторної роботи (Темно-зелений фон) */
-.work-block-2 {
-  grid-column: 2 / 4; /* Займає 2 і 3 колонки */
-  grid-row: 4 / 5;
-  background-color: var(--color-dark-green);
-  color: var(--color-white);
-}
-
-.work-block-2 .work-button {
-  background-color: var(--color-white);
-  color: var(--color-dark-green);
-  border: none;
-}
-
-.work-block-2 .work-button:hover {
-  background-color: #eee;
-}
-
-/* ---- Футер (Підвал) ---- */
-
+/* --- Футер --- */
 .main-footer {
-  background-color: var(--color-dark-green);
-  color: var(--color-white);
-  padding: 15px 20px;
-  font-size: 0.85rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
 }
 
 .main-footer a {
-  color: var(--color-white);
-  text-decoration: underline;
+    color: #3498db;
+    margin: 0 5px;
 }
 
-.footer-right span {
-  margin-right: 5px;
+.main-footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* --- Адаптивність для мобільних --- */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .side-nav {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 10px;
+    }
+    
+    .section-about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-footer {
+        flex-direction: column;
+        text-align: center;
+    }
 }
