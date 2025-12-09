@@ -1,0 +1,88 @@
+/* 1. Скидаємо відступи */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Центруємо гру на екрані */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+    font-family: sans-serif;
+}
+
+/* 3. Рамка гри */
+.game-container {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    background-color: #87CEEB; /* Резервний колір */
+}
+
+[cite_start]/* 4. Рухомий фон [cite: 14, 15] */
+.scrolling-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* === ГОЛОВНЕ: Шлях до картинки === */
+    background-image: url('bg.jpg'); 
+    
+    background-size: cover;
+    background-position: left bottom;
+    
+    /* Анімація руху фону */
+    animation: moveBg 20s linear infinite; 
+    z-index: 1;
+}
+
+[cite_start]/* 5. Персонаж [cite: 12] */
+.character {
+    position: absolute;
+    bottom: 30px;
+    left: -150px;
+    z-index: 10;
+    
+    /* Рух покемона */
+    animation: walkAcross 10s linear infinite;
+}
+
+.character img {
+    height: 150px;
+    animation: bounce 0.5s infinite alternate;
+}
+
+/* 6. Земля */
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+    z-index: 5;
+}
+
+/* === Ключові кадри === */
+@keyframes moveBg {
+    from { background-position: 0 bottom; }
+    to { background-position: -800px bottom; }
+}
+
+@keyframes walkAcross {
+    0% { transform: translateX(0); left: -150px; }
+    100% { transform: translateX(1200px); left: -150px; }
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+}
